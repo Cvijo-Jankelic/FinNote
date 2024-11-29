@@ -12,6 +12,9 @@ target/
 *.iml
 *.ipr
 logs/
+# Ignoriranje log datoteka
+*.log
+
 
 ### Eclipse ###
 .apt_generated

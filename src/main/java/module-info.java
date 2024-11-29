@@ -1,6 +1,7 @@
 module com.project.finnote {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.project.finnote to javafx.fxml;
