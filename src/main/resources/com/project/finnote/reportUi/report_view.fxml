@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.finnote.controllers.ReportController"
+            prefWidth="800" prefHeight="600">
+
+    <top>
+        <!-- ToolBar with title and export button; styled with padding via CSS -->
+        <HBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Label text="Izvještaj" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnExportPdf" text="Spremi kao PDF" />
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane>
+            <tabs>
+                <Tab text="Metrike">
+                    <VBox spacing="10" VBox.vgrow="ALWAYS" >
+                        <TableView fx:id="reportTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colName" text="Metrička stavka" prefWidth="200" />
+                                <TableColumn fx:id="colValue" text="Vrijednost" prefWidth="150" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </Tab>
+                <Tab text="Kategorije">
+                    <TableView fx:id="categoriesTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="catIdCol" text="ID" prefWidth="50" />
+                            <TableColumn fx:id="catNameCol" text="Naziv" prefWidth="150" />
+                            <TableColumn fx:id="catTypeCol" text="Tip" prefWidth="100" />
+                            <TableColumn fx:id="catCreatedCol" text="Kreirano" prefWidth="150" />
+                        </columns>
+                    </TableView>
+                </Tab>
+                <Tab text="Bilješke">
+                    <TableView fx:id="notesTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="noteIdCol" text="Note ID" prefWidth="50" />
+                            <TableColumn fx:id="noteUserIdCol" text="User ID" prefWidth="80" />
+                            <TableColumn fx:id="noteTitleCol" text="Title" prefWidth="100" />
+                            <TableColumn fx:id="noteContentCol" text="Content" prefWidth="200" />
+                            <TableColumn fx:id="noteCategoryCol" text="Category" prefWidth="100" />
+                            <TableColumn fx:id="noteCreatedCol" text="Created" prefWidth="120" />
+                            <TableColumn fx:id="noteUpdatedCol" text="Updated" prefWidth="120" />
+                        </columns>
+                    </TableView>
+                </Tab>
+                <Tab text="Zapisi">
+                    <TableView fx:id="recordsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="recIdCol" text="Record ID" prefWidth="50" />
+                            <TableColumn fx:id="recUserIdCol" text="User ID" prefWidth="80" />
+                            <TableColumn fx:id="recAmountCol" text="Amount" prefWidth="80" />
+                            <TableColumn fx:id="recCurrencyCol" text="Currency" prefWidth="60" />
+                            <TableColumn fx:id="recCategoryCol" text="Category" prefWidth="100" />
+                            <TableColumn fx:id="recNoteCol" text="Note" prefWidth="150" />
+                            <TableColumn fx:id="recCreatedCol" text="Created" prefWidth="120" />
+                        </columns>
+                    </TableView>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

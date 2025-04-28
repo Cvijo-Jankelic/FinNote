@@ -2,6 +2,11 @@ module com.project.finnote {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires org.slf4j;
+    requires kernel;
+    requires layout;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.datatype.jsr310;
 
 
     opens com.project.finnote to javafx.fxml;
